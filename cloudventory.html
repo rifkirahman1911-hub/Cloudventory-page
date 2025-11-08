@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloudventory</title>
+  <link rel="stylesheet" href="cloudventory.css" />
+</head>
+<body>
+  <!-- ================= HEADER ================= -->
+  <header>
+    <div class="logo">
+      <!-- Logo awan -->
+      <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="30" height="30">
+        <path d="M19 18H6a4 4 0 010-8 5.5 5.5 0 0110.9-1.1A3.5 3.5 0 0119 18z"/>
+      </svg>
+      <span>Cloudventory</span>
+    </div>
+
+    <!-- Menu Navigasi -->
+    <nav>
+      <a href="#fitur">Fitur</a>
+      <a href="#manfaat">Manfaat</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <!-- Tombol Aksi Header -->
+    <div class="header-buttons">
+      <a href="#daftar" class="btn daftar">Daftar</a>
+      <a href="#login" class="btn login">Login</a>
+      <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+  </header>
+
+  <!-- ================= HERO CAROUSEL ================= -->
+  <section class="hero-carousel">
+    <div class="carousel">
+      <img src="hero1.jpg" alt="Gambar 1" class="active">
+      <img src="hero2.jpg" alt="Gambar 2">
+      <img src="hero3.jpg" alt="Gambar 3">
+    </div>
+    <div class="hero-overlay">
+      <h1>Kelola Bisnis UMKM Anda dengan Mudah</h1>
+      <p>Cloudventory membantu pencatatan keuangan & stok secara efisien.</p>
+      <a href="#daftar" class="cta-btn">Daftar Sekarang</a>
+    </div>
+  </section>
+
+  <!-- ================= FITUR ================= -->
+  <section id="fitur" class="section">
+    <h2>Fitur Unggulan</h2>
+    <div class="fitur-container">
+      <div class="fitur-card">
+        <h3>Pencatatan Stok Otomatis</h3>
+        <p>Catat dan kelola stok barang dengan mudah dan cepat.</p>
+      </div>
+      <div class="fitur-card">
+        <h3>Laporan Keuangan</h3>
+        <p>Dapatkan laporan real-time untuk bisnis UMKM Anda.</p>
+      </div>
+      <div class="fitur-card">
+        <h3>Akses Cloud</h3>
+        <p>Akses data Anda di mana saja dan kapan saja dengan aman.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MANFAAT ================= -->
+  <section id="manfaat" class="section">
+    <h2>Manfaat Penggunaan</h2>
+    <div class="manfaat-container">
+      <div class="manfaat-card">
+        <h3>Efisiensi Waktu</h3>
+        <p>Semua data tercatat otomatis dan menghemat waktu.</p>
+      </div>
+      <div class="manfaat-card">
+        <h3>Keamanan Data</h3>
+        <p>Data bisnis Anda tersimpan dengan aman di cloud.</p>
+      </div>
+      <div class="manfaat-card">
+        <h3>Skalabilitas</h3>
+        <p>Mudah dikembangkan seiring pertumbuhan bisnis Anda.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="kontak">
+    <p>© 2025 Cloudventory</p>
+    <p>Telepon: +62 813-1696-0245</p>
+<div class="hubungi-container">
+  <a href="https://wa.me/6281316960245" target="_blank" class="hubungi-btn">
+    Hubungi Kami
+  </a>
+</div>
+  </footer>
+
+  <script>
+    // ================= TOGGLE MODE TERANG / GELAP =================
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    });
+
+    // ================= CAROUSEL GAMBAR =================
+    const images = document.querySelectorAll('.carousel img');
+    let index = 0;
+    setInterval(() => {
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 4000);
+
+    // ================= SMOOTH SCROLL =================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
